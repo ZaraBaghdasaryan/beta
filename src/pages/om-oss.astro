@@ -1,38 +1,18 @@
 ---
 import Layout from '../layouts/Layout.astro'
-import { Debug } from 'astro:components'
-import BasicAccordion from '../components/ui/accordion/BasicAccordion.svelte'
-import { items } from '../copy/items'
-import { team } from '../copy/team'
-import { board } from '../copy/board'
-import Grid from '../components/ui/grid/Grid.svelte'
+import AboutUsAccordion from '../components/company/AboutUsAccordion.svelte'
 
 const title = 'Om oss | Klimatkollen - få koll på företagens utsläpp'
 
-const importedItems = items.map((item) => {
-  if (item.key === 'f' || item.key === 'g') {
-    return {
-      ...item,
-      component: Grid,
-      props: {
-        items: item.key === 'f' ? team : board,
-      },
-    }
-  }
-
-  return item
-})
 ---
 
 <Layout {title}>
   <h1>Om oss</h1>
-  <!-- <Debug {importedItems}/> -->
+
   <p>
     Klimatkollen är en medborgarplattform som tillgängliggör klimatdata. Klicka
     på rubrikerna för att läsa mer.
   </p>
 
-  <BasicAccordion client:load items={importedItems} />
-  <Grid items={team} />
-  <Grid items={board} />
+  <AboutUsAccordion client:load />
 </Layout>

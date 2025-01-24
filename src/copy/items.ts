@@ -1,3 +1,7 @@
+import Grid from '../components/ui/grid/Grid.svelte'
+import { board } from './board'
+import { team } from './team'
+
 export const items = [
   {
     key: 'a',
@@ -10,23 +14,31 @@ export const items = [
     title: 'Vilka är vi?',
     subtitle: '',
     text: `Vårt team`,
+    component: Grid,
+    props: {
+      items: team,
+    }
   },
   {
     key: 'g',
     title: 'Vår styrelse',
     subtitle: '',
     text: `Klimatkollen drivs av den ideella föreningen, Klimatbyrån. I styrelsen sitter:`,
+    component: Grid,
+    props: {
+      items: board,
+    }
   },
   {
     key: 'h',
     title: 'Så finansieras vi',
     subtitle: '',
     text: `Under 2024 och 2025 får Klimatkollen finansiell uppbackning av <a href="https://impactchallenge.withgoogle.com/techforsocialgood-sv/" target="_blank">Google.org Impact Challenge: Tech for Social Good</a> som en av två svenska mottagare.
-  
-  Under 2023 drevs Klimatkollen med stöd från Postkodstiftelsen. Uppstarten 2022 finansierades av Världsnaturfonden WWF, ClimateView, We Don’t Have Time och Argand Partners. 
-  
+
+  Under 2023 drevs Klimatkollen med stöd från Postkodstiftelsen. Uppstarten 2022 finansierades av Världsnaturfonden WWF, ClimateView, We Don’t Have Time och Argand Partners.
+
   Mycket av arbetet är ideellt, därför välkomnar vi fler samarbetspartners och ekonomiskt stöd för att kunna skala upp!
-  
+
   Skänk gärna en slant! Varje krona ger oss muskler att visa upp mer data. Vårt bankgiro: 5793-3178`,
   },
   {
@@ -34,13 +46,13 @@ export const items = [
     title: 'Tidigare projekt',
     subtitle: '',
     text: `Under 2023 fick Klimatkollen stöd av <a href="https://postkodstiftelsen.se/" target="_blank">Postkodstiftelsen</a> för att ta tempen på hur det går med klimatomställningen i kommunerna. I dag kan du se hur det går med koldioxidutsläppen. Nu visar vi även vad kommunerna gör för att minska dem. Vi utgår ifrån de största utsläppssektorerna och visar sedan hur det går med viktiga omställningar inom dessa sektorer, genom att presentera statistik om utvalda nyckeltal, ett nyckeltal per omställning.
-  
+
   Inför riksdagsvalet 2022 ansvarade Klimatkollen för två unika projekt för att ge medborgare bättre koll på utsläppseffekterna av partiernas klimatpolitik:
-  
-  1. <strong>Klimatmål</strong>  
+
+  1. <strong>Klimatmål</strong>
     En <a href="https://www.klimatkollen.se/partier" target="_blank">analys</a> av riksdagspartiernas klimatmål, tillsammans med forskarnätverket Researchers’ Desk, Världsnaturfonden WWF, Våra barns klimat och ClimateView, i samarbete med PwC och Naturskyddsföreningen. Analysen visade att sex av åtta partier missar Parisavtalets 1,5-gradersmål.
-  
-  2. <strong>Utsläppsberäkning</strong>  
+
+  2. <strong>Utsläppsberäkning</strong>
      <a href="https://www.klimatkollen.se/utslappsberakningar" target="_blank">Utsläppsberäkning</a> av riksdagspartiernas politik gällande tolv centrala klimatåtgärder. Bakom uträkningarna står Klimatkollen, Världsnaturfonden WWF, ClimateView, Naturskyddsföreningen och Våra barns klimat. Beräkningarna visade att den nya regeringens politik kan öka utsläppen med 25 miljoner ton redan under mandatperioden 2022–2026.`,
   },
 ]
